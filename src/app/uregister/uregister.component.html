@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-8" style="background-color: rgb(193, 212, 248)">
+            <p class="display-4 text-center text-primary">User Registration</p>
+            <form #ref="ngForm" (ngSubmit)="userRegistration(ref)" style="background-color: rgb(193, 212, 248)">
+                <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" autocomplete="off" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" autocomplete="off" ngModel required minlength="8" #usernameRef="ngModel">
+                    <div class="text-danger" *ngIf="usernameRef.invalid && (usernameRef.dirty || usernameRef.touched)">
+                        <div *ngIf="usernameRef.errors?.required"><h6>username is required</h6></div>
+                        <div *ngIf="usernameRef.errors?.minlength"><h6>minimum 8 char required</h6></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <show-hide-password size="sm" [btnOutline]="false"> 
+                    <input type="password" name="password" id="password" class="form-control" ngModel required minlength="6" #pwRef="ngModel">
+                    </show-hide-password>
+                    <div class="text-danger" *ngIf="pwRef.invalid && (pwRef.dirty || pwRef.touched)">
+                        <div *ngIf="pwRef.errors?.required"><h6>username is required</h6></div>
+                        <div *ngIf="pwRef.errors?.minlength"><h6>minimum 6 char required</h6></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" class="form-control" autocomplete="off" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" name="dob" id="dob" class="form-control" ngModel>
+                </div>
+                <label>Gender</label>
+                <div style="display:flex">
+                <div class="form-check ml-4 mr-4">
+                    <input type="radio" name="gender" id="male" value="male" class="form-check-input" ngModel>
+                    <label for="male">Male</label>
+                </div>
+                <div class="form-check ml-4 mr-4">
+                    <input type="radio" name="gender" id="female" value="female" class="form-check-input" ngModel>
+                    <label for="female">Female</label>
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Upload photo</label>
+                    <input type="file" name="photo" id="photo" class="form-control" (change)="incomingfile($event)" accept="image/*" />
+                </div>
+                <button type="submit" class="btn btn-success d-block mx-auto" [disabled]=ref.invalid>Register</button>
+            </form>
+        </div>
+    </div>
+</div>

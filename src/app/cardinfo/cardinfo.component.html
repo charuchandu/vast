@@ -1,0 +1,19 @@
+<div id="bg" style="margin:50px">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-sm-12 col-md-12 text-center">
+            <div class="container-fluid" style="height:600px;padding-top:30px;padding-top:150px">
+            <img [src]="viewData?.photo" width="400px" height="400px">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 text-center" style="justify-content: center;display:flex;flex-direction:column">
+        <div class="container">
+            <p class="display-4 text-center text-capitalize text-dark">{{viewData?.productname}}</p>
+            <h3>Colour: {{viewData?.colour}}</h3>
+            <h3>Price: {{viewData?.price}}</h3>
+            <button class="btn btn-info" (click)="cart(viewData)">Add to Cart</button>
+        </div>
+        </div>
+    </div>
+</div>
+</div>

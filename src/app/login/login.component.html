@@ -1,0 +1,32 @@
+<div class="container" style="padding-top:100px;padding-bottom:100px;background-color: rgb(167, 245, 232);margin-top:10px">
+    <h3 class="text-center text-dark">Login to Vast.com</h3>
+    <div class="row justify-content-center mt-4">
+        <div class="col-sm-8">
+            <form #ref="ngForm" (ngSubmit)="login(ref)">
+                <label style="font-size: larger;color:rgb(74, 74, 255)">Choose to login as:</label>
+                <div style="display:flex">
+                <div class="form-check ml-4 mr-4">
+                    <input type="radio" name="type" id="user" value="user" class="form-check-input mt-2" ngModel>
+                    <label style="font-size: larger" for="user">User</label>
+                </div>
+                <div class="form-check ml-4 mr-4">
+                    <input type="radio" name="type" id="admin" value="admin" class="form-check-input mt-2" ngModel>
+                    <label style="font-size: larger" for="admin">Admin</label>
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" autocomplete="off" ngModel required minlength="8" #usernameRef="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <show-hide-password size="sm" [btnOutline]="false"> 
+                    <input type="password" name="password" id="password" class="form-control" ngModel required minlength="6" #pwRef="ngModel">
+                    </show-hide-password>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success d-block mx-auto">login</button>
+            </form>
+        </div>
+    </div>
+</div>

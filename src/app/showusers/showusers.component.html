@@ -1,0 +1,19 @@
+<p class="display-4 text-info text-center">Users</p>
+<table class="table table-bordered">
+    <thead>
+        <th style="border:3px solid grey">Name</th>
+        <th style="border:3px solid grey">User Name</th>
+        <th style="border:3px solid grey">Gender</th>
+        <th style="border:3px solid grey">E-mail</th>
+        <th style="border:3px solid grey">Date Of Birth</th>
+        <th style="border:3px solid grey">profile</th>    
+    </thead>
+    <tr *ngFor="let user of users" style="color: rgb(8, 105, 32);font-size:large">
+        <td style="border:3px solid grey">{{user?.name}}</td>
+        <td style="border:3px solid grey">{{user?.username}}</td>
+        <td style="border:3px solid grey">{{user?.gender}}</td>
+        <td style="border:3px solid grey">{{user?.email}}</td>
+        <td style="border:3px solid grey">{{user?.dob}}</td>
+        <th style="border:3px solid grey"><img [src]="user.photo" width="80px" height="80px" style="border-radius: 50%"></th>
+    </tr>
+</table>

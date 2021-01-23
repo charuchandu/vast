@@ -1,0 +1,27 @@
+<div class="container" style="padding-top:100px;padding-bottom:100px;background-color: rgb(249, 200, 253);margin-top:10px">
+    <h3 class="text-center text-dark">Register to Vast.com</h3>
+    <div class="row justify-content-center mt-4">
+        <div class="col-sm-8">
+            <form #ref="ngForm" (ngSubmit)="registration(ref)" class="text-center">
+                <label style="font-size: larger;color:rgb(74, 74, 255)">Choose to register as:</label>
+                <div class="form-check ml-4 mr-4">
+                    <input type="radio" name="type" id="user" value="user" class="form-check-input mt-2" ngModel>
+                    <label style="font-size: larger" for="user">User</label>
+                </div>
+                <div class="form-check ml-4 mr-4">
+                    <input type="radio" name="type" id="admin" value="admin" class="form-check-input mt-2" ngModel>
+                    <label style="font-size: larger" for="admin">Admin</label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success d-block mx-auto">Register</button>
+            </form>
+            <br>
+            <hr>
+            <form #ref="ngForm" (ngSubmit)="login(ref)" class="text-center mb-4">
+                <label>Already registered?</label>
+                <br>
+                <button type="submit" class="btn btn-warning">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

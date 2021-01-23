@@ -1,0 +1,14 @@
+<div class="container pt-4">
+   <div class="card m-2" style="background-color:rgb(218, 243, 171)" width="500px" height="100px" *ngFor="let cd of cardData">
+       <div class="row">
+           <div class="col-6 text-center">
+               <img [src]="cd.photo" width="200px">
+           </div>
+           <div class="col-6 text-center pt-4">
+               <h5 class="text-success text-capitalize">Name:{{cd.productname}}</h5>
+               <h5 class="text-success text-capitalize">Price:{{cd.price}}</h5>
+               <button class="btn btn-danger" (click)="delete(cd.pid)">Delete</button>
+           </div>
+       </div>
+   </div>
+</div>

@@ -1,0 +1,38 @@
+<div id="crs1" class="carousel slide"  data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/Home-Centre/HC-Mobile-2-Offer-060917.jpg" style="width:100%;height:400px">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.indianexpress.com/2020/10/Untitled-design-2020-10-15T171350.830.jpg" style="width:100%;height:400px">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.sbicard.com/sbi-card-en/assets/media/images/personal/offer-banner/women-centric-offers/d-women-centric-offers.jpg" style="width:100%;height:400px">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.mobilityindia.com/wp-content/uploads/2020/01/samsung2-1-20.jpg" style="width:100%;height:400px">
+      </div>
+      <div class="carousel-item">
+        <img src="https://blog.woohoo.in/wp-content/uploads/2013/01/14-sankranthi-titan-offer.jpg" style="width:100%;height:400px">
+      </div>
+    </div>
+    <a href="#crs1" class="carousel-control-prev" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a href="#crs1" class="carousel-control-next" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="container-fluid ml-1" style="background-color: aliceblue">
+    <div class="row">
+        <div *ngFor="let c of products" class="col-sm-12 col-md-6 col-lg-3 p-2">
+            <div class="card" (click)="viewMore(c.pid)" style="width:355px;height:300px;border:2px solid rgb(229, 226, 226)">
+                <img [src]="c.photo" width="100%" height="200px">
+                <p class="text-center text-dark mt-2" style="font-size: large">{{c.productname}}</p>
+                <h6 class="text-center">Rs: {{c.price}}</h6>
+            </div>
+        </div> 
+    </div>
+</div>

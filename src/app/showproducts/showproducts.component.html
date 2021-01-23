@@ -1,0 +1,20 @@
+<p class="display-4 text-info text-center">Products</p>
+<table class="table">
+    <thead class="text-success">
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Colour</th>
+        <th>Price</th>
+        <th>Photo</th>
+        <th>Delete</th>
+    </thead>
+  <tr *ngFor="let product of products" class="text-capitalize text-primary" style="font-size:20px">
+        <td>{{product?.pid}}</td>
+        <td>{{product?.productname}}</td>
+        <td>{{product?.colour}}</td>
+        <td>{{product?.price}}</td>
+        <td><img [src]="product.photo" width="150px" height="150px"></td>
+        <td><button type="submit" class="btn btn-danger"  (click)="delete(product.pid)">Delete</button></td>
+    </tr>
+
+</table>
